@@ -1,3 +1,4 @@
+from logalert.ops import router as ops_router
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
@@ -6,6 +7,7 @@ from pydantic import BaseModel, Field
 from logalert.rules import DEFAULT_RULES, RuleError, analyze, compile_rules
 
 app = FastAPI(title="Log analyzer")
+app.include_router(ops_router, prefix="/v1")
 
 
 class CustomRule(BaseModel):

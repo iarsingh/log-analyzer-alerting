@@ -74,3 +74,7 @@ Send `rules` to replace the defaults for one request. Each rule needs a name, a 
 - Echo a secret. `password=`, `token=`, `secret=`, `api_key=`, bearer tokens, and AWS access key ids are redacted in the returned line.
 - Page anyone. `paged` is always false.
 - Store the log, or read more than 50,000 lines in one request.
+
+## Ops plane
+
+Workspaces, tenant isolation, job approval, and audit live under `/v1`. Production apply is refused. See `docs/ARCHITECTURE.md`.
